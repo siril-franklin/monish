@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Lost Item</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Report Lost Item</h2>
+    <form id="lost-form" class="form" action="LostItemServlet" method="post" enctype="multipart/form-data">
+      <input type="text" name="itemName" placeholder="Item Name *" required>
+      <select name="category" required>
+        <option value="">Category *</option>
+        <option>Electronics</option>
+        <option>Clothing</option>
+        <option>Documents</option>
+        <option>Keys</option>
+        <option>Jewelry</option>
+        <option>Books</option>
+        <option>Other</option>
+      </select>
+      <textarea name="description" placeholder="Description *" required></textarea>
+      <input type="text" name="location" placeholder="Location Lost *" required>
+      <input type="date" name="lostDate" required>
+      <input type="text" name="contactName" placeholder="Your Name *" required>
+      <input type="text" name="contactInfo" placeholder="Phone or Email *" required>
+      <textarea name="notes" placeholder="Additional Notes"></textarea>
+      <input type="file" name="image" accept="image/*" required>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <p id="lost-success" class="success hidden"> Item submitted successfully!</p>
+
+    <h3>Reported Lost Items</h3>
+    
+      <tbody></tbody>
+    </table>
+  </div>
+  <div id="lost-items"></div>
+<script src="lost.js"></script>
+</body>
+</html>
